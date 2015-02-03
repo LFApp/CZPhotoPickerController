@@ -369,7 +369,7 @@ typedef enum {
 
   switch (buttonIndex) {
     case 0:
-      self.completionBlock(nil, @{ UIImagePickerControllerOriginalImage : self.lastPhoto, UIImagePickerControllerEditedImage : self.lastPhoto });
+      self.completionBlock(nil, @{ UIImagePickerControllerOriginalImage : self.lastPhoto, UIImagePickerControllerEditedImage : self.lastPhoto, @"lastPhoto": @(YES) });
       break;
 
     case 1:

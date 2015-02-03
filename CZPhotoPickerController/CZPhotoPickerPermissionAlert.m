@@ -44,24 +44,25 @@
   NSString *cancel = NSLocalizedString(@"OK", nil);
 
   UIAlertView *alert;
-  if ([CZPhotoPickerController isOS8OrHigher]) {
-    alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:cancel otherButtonTitles:NSLocalizedString(@"Open Settings", nil), nil];
-  }
-  else {
-    alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:cancel otherButtonTitles:nil];
-  }
+//  if ([CZPhotoPickerController isOS8OrHigher]) {
+//    alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:cancel otherButtonTitles:NSLocalizedString(@"Open Settings", nil), nil];
+//  }
+//  else {
+//    alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:cancel otherButtonTitles:nil];
+//  }
 
+  alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancel otherButtonTitles:nil];
   [alert show];
 }
 
-#pragma mark - UIAlertViewDelegate
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-  if (buttonIndex != alertView.cancelButtonIndex) {
-    NSURL *URL = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
-    [[UIApplication sharedApplication] openURL:URL];
-  }
-}
+//#pragma mark - UIAlertViewDelegate
+//
+//- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+//{
+//  if (buttonIndex != alertView.cancelButtonIndex) {
+//    NSURL *URL = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+//    [[UIApplication sharedApplication] openURL:URL];
+//  }
+//}
 
 @end
